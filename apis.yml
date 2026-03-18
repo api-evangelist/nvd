@@ -1,6 +1,103 @@
 aid: nvd
 url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml
 apis:
+- aid: nvd:nvd-cve-api
+  name: NVD CVE API
+  tags:
+  - Security
+  - CVE
+  - Vulnerability
+  - CVSS
+  image: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/image.png
+  humanURL: https://nvd.nist.gov/developers/vulnerabilities
+  baseURL: https://services.nvd.nist.gov/rest/json/cves/2.0
+  properties:
+  - url: https://nvd.nist.gov/developers/vulnerabilities
+    type: Documentation
+  - url: https://nvd.nist.gov/developers/start-here
+    type: GettingStarted
+  - url: https://nvd.nist.gov/developers/request-an-api-key
+    type: Authentication
+  - url: https://nvd.nist.gov/developers/start-here
+    type: RateLimits
+  description: >-
+    The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Supports filtering by CVE ID, CVSS metrics, CWE, keyword, modification date, and publication date. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.
+- aid: nvd:nvd-cve-change-history-api
+  name: NVD CVE Change History API
+  tags:
+  - Security
+  - CVE
+  - Vulnerability
+  - Change History
+  image: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/image.png
+  humanURL: https://nvd.nist.gov/developers/vulnerabilities
+  baseURL: https://services.nvd.nist.gov/rest/json/cvehistory/2.0
+  properties:
+  - url: https://nvd.nist.gov/developers/vulnerabilities
+    type: Documentation
+  - url: https://nvd.nist.gov/developers/start-here
+    type: GettingStarted
+  - url: https://nvd.nist.gov/developers/request-an-api-key
+    type: Authentication
+  description: >-
+    The NVD CVE Change History API tracks modifications to CVE records over time, enabling consumers to identify updated vulnerability data and synchronize their local databases with incremental changes rather than full reloads.
+- aid: nvd:nvd-cpe-api
+  name: NVD CPE API
+  tags:
+  - Security
+  - CPE
+  - Vulnerability
+  - Product Enumeration
+  image: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/image.png
+  humanURL: https://nvd.nist.gov/developers/products
+  baseURL: https://services.nvd.nist.gov/rest/json/cpes/2.0
+  properties:
+  - url: https://nvd.nist.gov/developers/products
+    type: Documentation
+  - url: https://nvd.nist.gov/developers/start-here
+    type: GettingStarted
+  - url: https://nvd.nist.gov/developers/request-an-api-key
+    type: Authentication
+  description: >-
+    The NVD CPE (Common Platform Enumeration) API provides access to the authoritative CPE dictionary, enabling lookup of software and hardware product identifiers. Supports filtering by CPE name, match string, keyword, and modification date. Returns up to 10,000 results per page.
+- aid: nvd:nvd-cpe-match-api
+  name: NVD CPE Match Criteria API
+  tags:
+  - Security
+  - CPE
+  - Vulnerability
+  - Match Criteria
+  image: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/image.png
+  humanURL: https://nvd.nist.gov/developers/products
+  baseURL: https://services.nvd.nist.gov/rest/json/cpematch/2.0
+  properties:
+  - url: https://nvd.nist.gov/developers/products
+    type: Documentation
+  - url: https://nvd.nist.gov/developers/start-here
+    type: GettingStarted
+  - url: https://nvd.nist.gov/developers/request-an-api-key
+    type: Authentication
+  description: >-
+    The NVD CPE Match Criteria API retrieves CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Supports filtering by CVE ID, match criteria ID, and match string patterns. Returns up to 500 results per page.
+- aid: nvd:nvd-source-api
+  name: NVD Source API
+  tags:
+  - Security
+  - CVE
+  - Data Sources
+  - Organizations
+  image: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/image.png
+  humanURL: https://nvd.nist.gov/developers/data-sources
+  baseURL: https://services.nvd.nist.gov/rest/json/source/2.0
+  properties:
+  - url: https://nvd.nist.gov/developers/data-sources
+    type: Documentation
+  - url: https://nvd.nist.gov/developers/start-here
+    type: GettingStarted
+  - url: https://nvd.nist.gov/developers/request-an-api-key
+    type: Authentication
+  description: >-
+    The NVD Source API provides information about the organizations that contribute vulnerability data to the NVD dataset, enabling consumers to understand data provenance. Returns up to 1,000 source records per page. Data changes infrequently; once daily updates recommended.
 - aid: nvd:nvd-api
   name: National Vulnerability Database API
   tags:
@@ -17,3 +114,20 @@ apis:
     type: Documentation
   description: >-
     The National Vulnerability Database (NVD) provides REST and RSS/Atom APIs for CVE (Common Vulnerabilities and Exposures) data. APIs deliver vulnerability descriptions, CVSS severity scores, affected product lists, and reference links for security monitoring and dependency alerting.
+common:
+- url: https://nvd.nist.gov/developers
+  type: Portal
+- url: https://nvd.nist.gov/
+  type: Website
+- url: https://nvd.nist.gov/developers/start-here
+  type: GettingStarted
+- url: https://nvd.nist.gov/developers/request-an-api-key
+  type: Authentication
+- url: https://nvd.nist.gov/developers/start-here
+  type: RateLimits
+- url: https://nvd.nist.gov/developers/terms-of-use
+  type: TermsOfService
+maintainer:
+  name: Kin Lane
+  email: kin@apievangelist.com
+modified: '2026-03-18'
