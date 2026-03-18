@@ -1,0 +1,19 @@
+aid: nvd
+url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml
+apis:
+- aid: nvd:nvd-api
+  name: National Vulnerability Database API
+  tags:
+  - Security
+  - CVE
+  - Vulnerability
+  - RSS
+  - XML
+  image: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/image.png
+  humanURL: https://nvd.nist.gov/developers
+  baseURL: https://services.nvd.nist.gov/rest/json/cves/2.0
+  properties:
+  - url: https://nvd.nist.gov/developers
+    type: Documentation
+  description: >-
+    The National Vulnerability Database (NVD) provides REST and RSS/Atom APIs for CVE (Common Vulnerabilities and Exposures) data. APIs deliver vulnerability descriptions, CVSS severity scores, affected product lists, and reference links for security monitoring and dependency alerting.
