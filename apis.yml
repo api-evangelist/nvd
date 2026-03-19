@@ -20,6 +20,12 @@ apis:
     type: Authentication
   - url: https://nvd.nist.gov/developers/start-here
     type: RateLimits
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml
+    type: OpenAPI
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-schema/nvd-cve-schema.json
+    type: JSONSchema
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-ld/nvd-context.jsonld
+    type: JSONLDContext
   description: >-
     The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Supports filtering by CVE ID, CVSS metrics, CWE, keyword, modification date, and publication date. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.
 - aid: nvd:nvd-cve-change-history-api
@@ -39,6 +45,8 @@ apis:
     type: GettingStarted
   - url: https://nvd.nist.gov/developers/request-an-api-key
     type: Authentication
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml
+    type: OpenAPI
   description: >-
     The NVD CVE Change History API tracks modifications to CVE records over time, enabling consumers to identify updated vulnerability data and synchronize their local databases with incremental changes rather than full reloads.
 - aid: nvd:nvd-cpe-api
@@ -58,6 +66,8 @@ apis:
     type: GettingStarted
   - url: https://nvd.nist.gov/developers/request-an-api-key
     type: Authentication
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml
+    type: OpenAPI
   description: >-
     The NVD CPE (Common Platform Enumeration) API provides access to the authoritative CPE dictionary, enabling lookup of software and hardware product identifiers. Supports filtering by CPE name, match string, keyword, and modification date. Returns up to 10,000 results per page.
 - aid: nvd:nvd-cpe-match-api
@@ -77,6 +87,8 @@ apis:
     type: GettingStarted
   - url: https://nvd.nist.gov/developers/request-an-api-key
     type: Authentication
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml
+    type: OpenAPI
   description: >-
     The NVD CPE Match Criteria API retrieves CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Supports filtering by CVE ID, match criteria ID, and match string patterns. Returns up to 500 results per page.
 - aid: nvd:nvd-source-api
@@ -96,6 +108,8 @@ apis:
     type: GettingStarted
   - url: https://nvd.nist.gov/developers/request-an-api-key
     type: Authentication
+  - url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml
+    type: OpenAPI
   description: >-
     The NVD Source API provides information about the organizations that contribute vulnerability data to the NVD dataset, enabling consumers to understand data provenance. Returns up to 1,000 source records per page. Data changes infrequently; once daily updates recommended.
 - aid: nvd:nvd-api
@@ -127,6 +141,12 @@ common:
   type: RateLimits
 - url: https://nvd.nist.gov/developers/terms-of-use
   type: TermsOfService
+- url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml
+  type: OpenAPI
+- url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-schema/nvd-cve-schema.json
+  type: JSONSchema
+- url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-ld/nvd-context.jsonld
+  type: JSONLDContext
 maintainer:
   name: Kin Lane
   email: kin@apievangelist.com

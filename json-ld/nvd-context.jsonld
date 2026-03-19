@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "nvd": "https://nvd.nist.gov/ontology/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "CVE": "schema:TechArticle",
+    "id": "schema:identifier",
+    "sourceIdentifier": {
+      "@id": "schema:publisher",
+      "@type": "xsd:string"
+    },
+    "published": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:dateTime"
+    },
+    "lastModified": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "vulnStatus": "schema:status",
+    "descriptions": {
+      "@id": "schema:description",
+      "@container": "@set"
+    },
+    "value": "schema:text",
+    "lang": "schema:inLanguage",
+    "references": {
+      "@id": "schema:citation",
+      "@container": "@set"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "xsd:anyURI"
+    },
+    "CVSSMetric": "schema:Rating",
+    "baseScore": {
+      "@id": "schema:ratingValue",
+      "@type": "xsd:decimal"
+    },
+    "baseSeverity": "schema:ratingValue",
+    "vectorString": {
+      "@id": "nvd:cvssVector",
+      "@type": "xsd:string"
+    },
+    "weaknesses": {
+      "@id": "nvd:weakness",
+      "@container": "@set"
+    },
+    "configurations": {
+      "@id": "nvd:affectedConfiguration",
+      "@container": "@set"
+    },
+    "cisaExploitAdd": {
+      "@id": "nvd:kevAddDate",
+      "@type": "xsd:date"
+    },
+    "cisaActionDue": {
+      "@id": "nvd:kevActionDueDate",
+      "@type": "xsd:date"
+    },
+    "cisaRequiredAction": {
+      "@id": "nvd:kevRequiredAction",
+      "@type": "xsd:string"
+    },
+    "CPE": "schema:SoftwareApplication",
+    "cpeName": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    }
+  }
+}
