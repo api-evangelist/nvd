@@ -1,10 +1,19 @@
-# Unknown (nvd)
+# NVD (nvd)
+The National Vulnerability Database (NVD) provides REST APIs for CVE (Common Vulnerabilities and Exposures) data, CPE (Common Platform Enumeration) records, match criteria, and source organizations. APIs deliver vulnerability descriptions, CVSS severity scores, affected product lists, CWE classifications, and reference links for security monitoring and dependency alerting.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml)
 
+## Scope
+
+- **Type:** Index
+
+## Tags:
+
+ - Security, CVE, CPE, Vulnerability, CVSS
+
 ## Timestamps
 
-- **Modified:** 2026-03-18 
+- **Modified:** 2026-04-28
 
 ## APIs
 
@@ -121,3 +130,9 @@ The National Vulnerability Database (NVD) provides REST and RSS/Atom APIs for CV
 - [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml)
 - [JSONSchema](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-schema/nvd-cve-schema.json)
 - [JSONLDContext](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-ld/nvd-context.jsonld)
+
+## Maintainers
+
+**FN:** Kin Lane
+
+**Email:** kin@apievangelist.com
