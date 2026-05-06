@@ -1,0 +1,568 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NVD CVE API
+  description: 'The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including
+    CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests
+    per 30 seconds; with key: 50 requests per 30 seconds.'
+  tags:
+  - Nvd
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: nvd
+    baseUri: https://services.nvd.nist.gov/rest/json
+    description: NVD CVE API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: apiKey
+      value: '{{NVD_TOKEN}}'
+    resources:
+    - name: cves-2-0
+      path: /cves/2.0
+      operations:
+      - name: getcves
+        method: GET
+        description: Get CVE records
+        inputParameters:
+        - name: cveId
+          in: query
+          type: string
+          description: Specific CVE ID (e.g., CVE-2021-44228)
+        - name: keywordSearch
+          in: query
+          type: string
+          description: Free text search across CVE description
+        - name: keywordExactMatch
+          in: query
+          type: boolean
+          description: Require exact keyword match when true
+        - name: cvssV3Severity
+          in: query
+          type: string
+          description: Filter by CVSS v3.x base severity
+        - name: cvssV2Severity
+          in: query
+          type: string
+          description: Filter by CVSS v2.0 base severity
+        - name: cvssV3Metrics
+          in: query
+          type: string
+          description: Filter by CVSS v3 vector string
+        - name: cweId
+          in: query
+          type: string
+          description: CWE weakness ID (e.g., CWE-79)
+        - name: cpeName
+          in: query
+          type: string
+          description: CPE 2.3 formatted string to find CVEs affecting a specific product
+        - name: isVulnerable
+          in: query
+          type: boolean
+          description: When true, only return CVEs where the CPE match is vulnerable (must use cpeName)
+        - name: virtualMatchString
+          in: query
+          type: string
+          description: CPE match string with wildcards
+        - name: pubStartDate
+          in: query
+          type: string
+          description: CVE publication start date (ISO 8601, max 120-day range)
+        - name: pubEndDate
+          in: query
+          type: string
+        - name: lastModStartDate
+          in: query
+          type: string
+          description: Last modification start date
+        - name: lastModEndDate
+          in: query
+          type: string
+        - name: sourceIdentifier
+          in: query
+          type: string
+          description: CVE source organization identifier
+        - name: hasKev
+          in: query
+          type: boolean
+          description: When true, only return CVEs in CISA's Known Exploited Vulnerabilities catalog
+        - name: hasCertAlerts
+          in: query
+          type: boolean
+        - name: hasCertNotes
+          in: query
+          type: boolean
+        - name: hasOval
+          in: query
+          type: boolean
+        - name: noRejected
+          in: query
+          type: boolean
+          description: Exclude CVEs with REJECTED status
+        - name: resultsPerPage
+          in: query
+          type: integer
+          description: Number of results per page (max 2000)
+        - name: startIndex
+          in: query
+          type: integer
+          description: Zero-based start index for pagination
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: cvehistory-2-0
+      path: /cvehistory/2.0
+      operations:
+      - name: getcvechangehistory
+        method: GET
+        description: Get CVE change history
+        inputParameters:
+        - name: cveId
+          in: query
+          type: string
+        - name: changeStartDate
+          in: query
+          type: string
+          required: true
+        - name: changeEndDate
+          in: query
+          type: string
+          required: true
+        - name: eventName
+          in: query
+          type: string
+        - name: resultsPerPage
+          in: query
+          type: integer
+        - name: startIndex
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: cpes-2-0
+      path: /cpes/2.0
+      operations:
+      - name: getcpes
+        method: GET
+        description: Get CPE (Common Platform Enumeration) records
+        inputParameters:
+        - name: cpeNameId
+          in: query
+          type: string
+          description: CPE UUID identifier
+        - name: cpeMatchString
+          in: query
+          type: string
+          description: CPE 2.3 match string (wildcards supported)
+        - name: keywordSearch
+          in: query
+          type: string
+        - name: keywordExactMatch
+          in: query
+          type: boolean
+        - name: lastModStartDate
+          in: query
+          type: string
+        - name: lastModEndDate
+          in: query
+          type: string
+        - name: matchCriteriaId
+          in: query
+          type: string
+        - name: resultsPerPage
+          in: query
+          type: integer
+        - name: startIndex
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: cpematch-2-0
+      path: /cpematch/2.0
+      operations:
+      - name: getcpematch
+        method: GET
+        description: Get CPE match criteria
+        inputParameters:
+        - name: cveId
+          in: query
+          type: string
+        - name: matchCriteriaId
+          in: query
+          type: string
+        - name: lastModStartDate
+          in: query
+          type: string
+        - name: lastModEndDate
+          in: query
+          type: string
+        - name: resultsPerPage
+          in: query
+          type: integer
+        - name: startIndex
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: source-2-0
+      path: /source/2.0
+      operations:
+      - name: getsources
+        method: GET
+        description: Get NVD data sources
+        inputParameters:
+        - name: sourceIdentifier
+          in: query
+          type: string
+        - name: lastModStartDate
+          in: query
+          type: string
+        - name: lastModEndDate
+          in: query
+          type: string
+        - name: resultsPerPage
+          in: query
+          type: integer
+        - name: startIndex
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: nvd-rest
+    description: REST adapter for NVD CVE API.
+    resources:
+    - path: /cves/2.0
+      name: getcves
+      operations:
+      - method: GET
+        name: getcves
+        description: Get CVE records
+        call: nvd.getcves
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /cvehistory/2.0
+      name: getcvechangehistory
+      operations:
+      - method: GET
+        name: getcvechangehistory
+        description: Get CVE change history
+        call: nvd.getcvechangehistory
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /cpes/2.0
+      name: getcpes
+      operations:
+      - method: GET
+        name: getcpes
+        description: Get CPE (Common Platform Enumeration) records
+        call: nvd.getcpes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /cpematch/2.0
+      name: getcpematch
+      operations:
+      - method: GET
+        name: getcpematch
+        description: Get CPE match criteria
+        call: nvd.getcpematch
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /source/2.0
+      name: getsources
+      operations:
+      - method: GET
+        name: getsources
+        description: Get NVD data sources
+        call: nvd.getsources
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: nvd-mcp
+    transport: http
+    description: MCP adapter for NVD CVE API for AI agent use.
+    tools:
+    - name: getcves
+      description: Get CVE records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nvd.getcves
+      with:
+        cveId: tools.cveId
+        keywordSearch: tools.keywordSearch
+        keywordExactMatch: tools.keywordExactMatch
+        cvssV3Severity: tools.cvssV3Severity
+        cvssV2Severity: tools.cvssV2Severity
+        cvssV3Metrics: tools.cvssV3Metrics
+        cweId: tools.cweId
+        cpeName: tools.cpeName
+        isVulnerable: tools.isVulnerable
+        virtualMatchString: tools.virtualMatchString
+        pubStartDate: tools.pubStartDate
+        pubEndDate: tools.pubEndDate
+        lastModStartDate: tools.lastModStartDate
+        lastModEndDate: tools.lastModEndDate
+        sourceIdentifier: tools.sourceIdentifier
+        hasKev: tools.hasKev
+        hasCertAlerts: tools.hasCertAlerts
+        hasCertNotes: tools.hasCertNotes
+        hasOval: tools.hasOval
+        noRejected: tools.noRejected
+        resultsPerPage: tools.resultsPerPage
+        startIndex: tools.startIndex
+      inputParameters:
+      - name: cveId
+        type: string
+        description: Specific CVE ID (e.g., CVE-2021-44228)
+      - name: keywordSearch
+        type: string
+        description: Free text search across CVE description
+      - name: keywordExactMatch
+        type: boolean
+        description: Require exact keyword match when true
+      - name: cvssV3Severity
+        type: string
+        description: Filter by CVSS v3.x base severity
+      - name: cvssV2Severity
+        type: string
+        description: Filter by CVSS v2.0 base severity
+      - name: cvssV3Metrics
+        type: string
+        description: Filter by CVSS v3 vector string
+      - name: cweId
+        type: string
+        description: CWE weakness ID (e.g., CWE-79)
+      - name: cpeName
+        type: string
+        description: CPE 2.3 formatted string to find CVEs affecting a specific product
+      - name: isVulnerable
+        type: boolean
+        description: When true, only return CVEs where the CPE match is vulnerable (must use cpeName)
+      - name: virtualMatchString
+        type: string
+        description: CPE match string with wildcards
+      - name: pubStartDate
+        type: string
+        description: CVE publication start date (ISO 8601, max 120-day range)
+      - name: pubEndDate
+        type: string
+        description: pubEndDate
+      - name: lastModStartDate
+        type: string
+        description: Last modification start date
+      - name: lastModEndDate
+        type: string
+        description: lastModEndDate
+      - name: sourceIdentifier
+        type: string
+        description: CVE source organization identifier
+      - name: hasKev
+        type: boolean
+        description: When true, only return CVEs in CISA's Known Exploited Vulnerabilities catalog
+      - name: hasCertAlerts
+        type: boolean
+        description: hasCertAlerts
+      - name: hasCertNotes
+        type: boolean
+        description: hasCertNotes
+      - name: hasOval
+        type: boolean
+        description: hasOval
+      - name: noRejected
+        type: boolean
+        description: Exclude CVEs with REJECTED status
+      - name: resultsPerPage
+        type: integer
+        description: Number of results per page (max 2000)
+      - name: startIndex
+        type: integer
+        description: Zero-based start index for pagination
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcvechangehistory
+      description: Get CVE change history
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nvd.getcvechangehistory
+      with:
+        cveId: tools.cveId
+        changeStartDate: tools.changeStartDate
+        changeEndDate: tools.changeEndDate
+        eventName: tools.eventName
+        resultsPerPage: tools.resultsPerPage
+        startIndex: tools.startIndex
+      inputParameters:
+      - name: cveId
+        type: string
+        description: cveId
+      - name: changeStartDate
+        type: string
+        description: changeStartDate
+        required: true
+      - name: changeEndDate
+        type: string
+        description: changeEndDate
+        required: true
+      - name: eventName
+        type: string
+        description: eventName
+      - name: resultsPerPage
+        type: integer
+        description: resultsPerPage
+      - name: startIndex
+        type: integer
+        description: startIndex
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcpes
+      description: Get CPE (Common Platform Enumeration) records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nvd.getcpes
+      with:
+        cpeNameId: tools.cpeNameId
+        cpeMatchString: tools.cpeMatchString
+        keywordSearch: tools.keywordSearch
+        keywordExactMatch: tools.keywordExactMatch
+        lastModStartDate: tools.lastModStartDate
+        lastModEndDate: tools.lastModEndDate
+        matchCriteriaId: tools.matchCriteriaId
+        resultsPerPage: tools.resultsPerPage
+        startIndex: tools.startIndex
+      inputParameters:
+      - name: cpeNameId
+        type: string
+        description: CPE UUID identifier
+      - name: cpeMatchString
+        type: string
+        description: CPE 2.3 match string (wildcards supported)
+      - name: keywordSearch
+        type: string
+        description: keywordSearch
+      - name: keywordExactMatch
+        type: boolean
+        description: keywordExactMatch
+      - name: lastModStartDate
+        type: string
+        description: lastModStartDate
+      - name: lastModEndDate
+        type: string
+        description: lastModEndDate
+      - name: matchCriteriaId
+        type: string
+        description: matchCriteriaId
+      - name: resultsPerPage
+        type: integer
+        description: resultsPerPage
+      - name: startIndex
+        type: integer
+        description: startIndex
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcpematch
+      description: Get CPE match criteria
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nvd.getcpematch
+      with:
+        cveId: tools.cveId
+        matchCriteriaId: tools.matchCriteriaId
+        lastModStartDate: tools.lastModStartDate
+        lastModEndDate: tools.lastModEndDate
+        resultsPerPage: tools.resultsPerPage
+        startIndex: tools.startIndex
+      inputParameters:
+      - name: cveId
+        type: string
+        description: cveId
+      - name: matchCriteriaId
+        type: string
+        description: matchCriteriaId
+      - name: lastModStartDate
+        type: string
+        description: lastModStartDate
+      - name: lastModEndDate
+        type: string
+        description: lastModEndDate
+      - name: resultsPerPage
+        type: integer
+        description: resultsPerPage
+      - name: startIndex
+        type: integer
+        description: startIndex
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsources
+      description: Get NVD data sources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nvd.getsources
+      with:
+        sourceIdentifier: tools.sourceIdentifier
+        lastModStartDate: tools.lastModStartDate
+        lastModEndDate: tools.lastModEndDate
+        resultsPerPage: tools.resultsPerPage
+        startIndex: tools.startIndex
+      inputParameters:
+      - name: sourceIdentifier
+        type: string
+        description: sourceIdentifier
+      - name: lastModStartDate
+        type: string
+        description: lastModStartDate
+      - name: lastModEndDate
+        type: string
+        description: lastModEndDate
+      - name: resultsPerPage
+        type: integer
+        description: resultsPerPage
+      - name: startIndex
+        type: integer
+        description: startIndex
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    NVD_TOKEN: NVD_TOKEN
