@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,10 +9,11 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: NVD
 providerId: nvd
-publisherName: NVD
-serviceCategory: API
+publisherName: National Institute of Standards and Technology (NIST)
+serviceCategory: Public Sector / Security Data
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Security
   - CVE
@@ -21,159 +23,115 @@ tags:
   - FinOps
   - Cost Management
   - FOCUS
-description: FinOps framework definition for the NVD API surface. Provides a FOCUS-aligned mapping for
-  cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+description: 'FOCUS-aligned FinOps for the National Vulnerability Database: APIs are free of charge from
+  NIST. Cost optimization is about request efficiency (caching, the recommended 6-second sleep, and the
+  free API key for 10x throughput) rather than dollars on an invoice.'
+sources:
+  - https://nvd.nist.gov/developers/start-here
+  - https://nvd.nist.gov/developers/request-an-api-key
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: NVD does not invoice consumers; visibility is about consumption patterns. Track requests/30s
+      against the 5 (anonymous) or 50 (API-keyed) limit and CVE/CPE result counts in client-side telemetry.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Allocate the single shared API key per consuming application or team to keep request
+      budgets isolated. Tag downstream uses (vulnerability scanner, SBOM tool, dependency monitor) so
+      each owner can see their share of the per-key budget.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Always run with an API key (10x rate limit, free). Cache CVE and CPE responses; use the
+      lastModStartDate / lastModEndDate parameters to fetch only deltas instead of the full corpus. Mirror
+      to internal storage rather than refetching for every internal scan.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+    description: Even though there is no $ cost, throttling impacts consuming product SLAs. Assign an
+      owner for the API key and the data refresh pipeline; review monthly for stale or runaway clients.
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Free / Public Service
+  billingFrequency: None
   billingCurrency: USD
   chargeCategories:
     - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
+  chargeFrequency: None
 focusColumns:
   ServiceName: NVD
-  ServiceCategory: Developer Tools / API
-  ProviderName: NVD
-  PublisherName: NVD
-  InvoiceIssuerName: NVD
-  PricingCategory: Usage-Based
+  ServiceCategory: Public Sector / Security Data
+  ProviderName: NIST National Vulnerability Database
+  PublisherName: National Institute of Standards and Technology (NIST)
+  InvoiceIssuerName: N/A (free service)
+  PricingCategory: Free
   PricingUnit: request
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
   - name: api_requests
-    description: Count of billable API requests
+    description: Total NVD API requests; tracked against the rolling 30-second rate limit
     unit: request
     aggregation: sum
     dimensions:
       - api
+      - api_key
       - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+  - name: cve_records_fetched
+    description: CVE records returned (used for delta sync planning)
+    unit: record
     aggregation: sum
     dimensions:
       - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+  - name: cpe_records_fetched
+    description: CPE records returned (used for delta sync planning)
+    unit: record
     aggregation: sum
     dimensions:
       - api
-      - endpoint
-      - tier
 apis:
   - name: NVD CVE API
-    baseURL: ''
+    baseURL: https://services.nvd.nist.gov/rest/json/cves/2.0
     tags:
       - Security
       - CVE
       - Vulnerability
       - CVSS
     serviceName: NVD CVE API
-    serviceCategory: API
+    serviceCategory: Security Data
   - name: NVD CVE Change History API
-    baseURL: ''
+    baseURL: https://services.nvd.nist.gov/rest/json/cvehistory/2.0
     tags:
       - Security
       - CVE
       - Vulnerability
       - Change History
     serviceName: NVD CVE Change History API
-    serviceCategory: API
+    serviceCategory: Security Data
   - name: NVD CPE API
-    baseURL: ''
+    baseURL: https://services.nvd.nist.gov/rest/json/cpes/2.0
     tags:
       - Security
       - CPE
-      - Vulnerability
       - Product Enumeration
     serviceName: NVD CPE API
-    serviceCategory: API
+    serviceCategory: Security Data
   - name: NVD CPE Match Criteria API
-    baseURL: ''
+    baseURL: https://services.nvd.nist.gov/rest/json/cpematch/2.0
     tags:
       - Security
       - CPE
-      - Vulnerability
       - Match Criteria
     serviceName: NVD CPE Match Criteria API
-    serviceCategory: API
+    serviceCategory: Security Data
   - name: NVD Source API
-    baseURL: ''
+    baseURL: https://services.nvd.nist.gov/rest/json/source/2.0
     tags:
       - Security
-      - CVE
       - Data Sources
       - Organizations
     serviceName: NVD Source API
-    serviceCategory: API
-  - name: National Vulnerability Database API
-    baseURL: ''
-    tags:
-      - Security
-      - CVE
-      - Vulnerability
-      - RSS
-      - XML
-    serviceName: National Vulnerability Database API
-    serviceCategory: API
+    serviceCategory: Security Data
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Requests per CVE refresh
+    metric: api_requests / cve_records_fetched
+    target: minimize via lastModStartDate delta sync
+  - name: Cache hit ratio
+    metric: cache_hits / (cache_hits + api_requests)
+    target: '> 0.9 for steady-state CVE/CPE lookups'
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

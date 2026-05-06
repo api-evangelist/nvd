@@ -4,152 +4,72 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: NVD
 providerId: nvd
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Security
   - CVE
   - CPE
   - Vulnerability
   - CVSS
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: The National Vulnerability Database (NVD) is a US Government (NIST) service. APIs are free
+  to use and there is no commercial pricing. Anonymous and API-key access are the only tiers — the API
+  key is free and only changes the rate limit. Use of the data is subject to the NVD Terms of Use.
+sources:
+  - https://nvd.nist.gov/developers/start-here
+  - https://nvd.nist.gov/developers/request-an-api-key
 plans:
-  - id: nvd-free
-    name: Free
+  - id: nvd-public
+    name: Public (No API Key)
     type: freemium
-    description: Free entry tier for the NVD API surface. Intended for evaluation, prototyping, and low-volume
-      integrations. Real limits and pricing must be reconciled with the provider's published plan documentation.
+    description: Default access tier with no registration. Free, with the lowest rate limit.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
+      - label: API requests
+        description: All NVD APIs (CVE, CVE Change History, CPE, Match Criteria, Source)
         name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: NVD CVE API
-      - name: NVD CVE Change History API
-      - name: NVD CPE API
-      - name: NVD CPE Match Criteria API
-      - name: NVD Source API
-      - name: National Vulnerability Database API
-  - id: nvd-pro
-    name: Professional
-    type: paid
-    description: Production tier for NVD. Provides higher quotas, priority support, and access to the
-      broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
         type: metered
         metric: requests
         limit: -1
-        timeFrame: month
+        timeFrame: usage
         geo: global
-        domains: []
-        unit: 1000
-        price: TBD
+        domains:
+          - https://services.nvd.nist.gov
+        unit: 1
+        price: '0.00'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
       - name: NVD CVE API
       - name: NVD CVE Change History API
       - name: NVD CPE API
       - name: NVD CPE Match Criteria API
       - name: NVD Source API
       - name: National Vulnerability Database API
-  - id: nvd-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for NVD. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
+  - id: nvd-api-key
+    name: With API Key
+    type: freemium
+    description: Free access tier obtained by completing a request form, agreeing to terms of use, and
+      validating an email address. Higher rate limit (50 requests / 30 seconds vs 5 / 30 seconds).
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
+      - label: API requests
+        description: All NVD APIs with the issued API key supplied via apiKey query parameter
         name: api_requests
-        type: quota
+        type: metered
         metric: requests
         limit: -1
-        timeFrame: month
-        geo: configurable
-        domains: []
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://services.nvd.nist.gov
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains: []
-        unit: 1
-        price: custom
+        price: '0.00'
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
+      - name: 10x rate limit vs anonymous
       - name: NVD CVE API
       - name: NVD CVE Change History API
       - name: NVD CPE API
       - name: NVD CPE Match Criteria API
       - name: NVD Source API
-      - name: National Vulnerability Database API
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
