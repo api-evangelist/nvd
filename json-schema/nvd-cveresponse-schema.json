@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CVEResponse",
+  "title": "CVEResponse",
+  "type": "object",
+  "properties": {
+    "resultsPerPage": {
+      "type": "integer"
+    },
+    "startIndex": {
+      "type": "integer"
+    },
+    "totalResults": {
+      "type": "integer"
+    },
+    "format": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "vulnerabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cve": {
+            "$ref": "#/components/schemas/CVE"
+          }
+        }
+      }
+    }
+  }
+}

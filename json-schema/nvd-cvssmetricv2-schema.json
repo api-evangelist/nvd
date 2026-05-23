@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CVSSMetricV2",
+  "title": "CVSSMetricV2",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Primary",
+        "Secondary"
+      ]
+    },
+    "cvssData": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "enum": [
+            "2.0"
+          ]
+        },
+        "vectorString": {
+          "type": "string"
+        },
+        "baseScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        }
+      }
+    },
+    "baseSeverity": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    }
+  }
+}

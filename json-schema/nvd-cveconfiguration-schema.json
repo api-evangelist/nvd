@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CVEConfiguration",
+  "title": "CVEConfiguration",
+  "type": "object",
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "operator": {
+            "type": "string",
+            "enum": [
+              "AND",
+              "OR"
+            ]
+          },
+          "negate": {
+            "type": "boolean"
+          },
+          "cpeMatch": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "vulnerable": {
+                  "type": "boolean"
+                },
+                "criteria": {
+                  "type": "string",
+                  "description": "CPE 2.3 match string"
+                },
+                "matchCriteriaId": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "versionStartIncluding": {
+                  "type": "string"
+                },
+                "versionStartExcluding": {
+                  "type": "string"
+                },
+                "versionEndIncluding": {
+                  "type": "string"
+                },
+                "versionEndExcluding": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

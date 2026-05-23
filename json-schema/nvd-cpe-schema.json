@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CPE",
+  "title": "CPE",
+  "type": "object",
+  "properties": {
+    "deprecated": {
+      "type": "boolean"
+    },
+    "cpeName": {
+      "type": "string",
+      "description": "CPE 2.3 formatted string"
+    },
+    "cpeNameId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "lastModified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "titles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "lang": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string",
+            "format": "uri"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

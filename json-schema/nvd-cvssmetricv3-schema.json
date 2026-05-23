@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CVSSMetricV3",
+  "title": "CVSSMetricV3",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Primary",
+        "Secondary"
+      ]
+    },
+    "cvssData": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "enum": [
+            "3.0",
+            "3.1"
+          ]
+        },
+        "vectorString": {
+          "type": "string",
+          "pattern": "^CVSS:3\\.[01]/"
+        },
+        "attackVector": {
+          "type": "string",
+          "enum": [
+            "NETWORK",
+            "ADJACENT_NETWORK",
+            "LOCAL",
+            "PHYSICAL"
+          ]
+        },
+        "attackComplexity": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "HIGH"
+          ]
+        },
+        "privilegesRequired": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "LOW",
+            "HIGH"
+          ]
+        },
+        "userInteraction": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "REQUIRED"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "UNCHANGED",
+            "CHANGED"
+          ]
+        },
+        "confidentialityImpact": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "LOW",
+            "HIGH"
+          ]
+        },
+        "integrityImpact": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "LOW",
+            "HIGH"
+          ]
+        },
+        "availabilityImpact": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "LOW",
+            "HIGH"
+          ]
+        },
+        "baseScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "baseSeverity": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "CRITICAL"
+          ]
+        }
+      }
+    },
+    "exploitabilityScore": {
+      "type": "number"
+    },
+    "impactScore": {
+      "type": "number"
+    }
+  }
+}

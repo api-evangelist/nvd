@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CPEResponse",
+  "title": "CPEResponse",
+  "type": "object",
+  "properties": {
+    "resultsPerPage": {
+      "type": "integer"
+    },
+    "startIndex": {
+      "type": "integer"
+    },
+    "totalResults": {
+      "type": "integer"
+    },
+    "format": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cpe": {
+            "$ref": "#/components/schemas/CPE"
+          }
+        }
+      }
+    }
+  }
+}

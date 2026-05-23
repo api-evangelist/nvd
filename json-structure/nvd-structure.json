@@ -1,0 +1,123 @@
+{
+  "provider": "NVD",
+  "providerId": "nvd",
+  "kind": "json-structure",
+  "description": "Structural overview of the NVD API surface; extracted from openapi/.",
+  "schemaCount": 11,
+  "operationCount": 5,
+  "schemas": [
+    {
+      "name": "CVE",
+      "type": "object",
+      "propertyCount": 14,
+      "required": []
+    },
+    {
+      "name": "CVSSMetricV3",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "CVSSMetricV2",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "CVEConfiguration",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "CVEResponse",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "CVEHistoryResponse",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "CPE",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "CPEResponse",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "CPEMatchResponse",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "SourceResponse",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "ErrorResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/cves/2.0",
+      "operationId": "getCVEs",
+      "summary": "Get CVE records",
+      "tags": [
+        "CVE"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/cvehistory/2.0",
+      "operationId": "getCVEChangeHistory",
+      "summary": "Get CVE change history",
+      "tags": [
+        "CVE Change History"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/cpes/2.0",
+      "operationId": "getCPEs",
+      "summary": "Get CPE (Common Platform Enumeration) records",
+      "tags": [
+        "CPE"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/cpematch/2.0",
+      "operationId": "getCPEMatch",
+      "summary": "Get CPE match criteria",
+      "tags": [
+        "CPE Match"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/source/2.0",
+      "operationId": "getSources",
+      "summary": "Get NVD data sources",
+      "tags": [
+        "Sources"
+      ]
+    }
+  ]
+}

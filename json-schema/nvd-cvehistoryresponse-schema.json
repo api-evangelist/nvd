@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CVEHistoryResponse",
+  "title": "CVEHistoryResponse",
+  "type": "object",
+  "properties": {
+    "resultsPerPage": {
+      "type": "integer"
+    },
+    "startIndex": {
+      "type": "integer"
+    },
+    "totalResults": {
+      "type": "integer"
+    },
+    "format": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cveChanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "change": {
+            "type": "object",
+            "properties": {
+              "cveId": {
+                "type": "string"
+              },
+              "eventName": {
+                "type": "string"
+              },
+              "cveChangeId": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "sourceIdentifier": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "Added",
+                        "Changed",
+                        "Removed"
+                      ]
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "oldValue": {
+                      "type": "string"
+                    },
+                    "newValue": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+name: NVD Domain Vocabulary
+provider: NVD
+providerId: nvd
+description: Tag-derived vocabulary for the NVD API surface; sourced from openapi/ tags.
+terms:
+- term: CPE
+  description: Common Platform Enumeration product dictionary
+- term: CPE Match
+  description: CVE-to-product match criteria
+- term: CVE
+  description: Common Vulnerabilities and Exposures records
+- term: CVE Change History
+  description: CVE record modification tracking
+- term: Sources
+  description: NVD data source organizations
