@@ -1,0 +1,1283 @@
+{
+  "item": [
+    {
+      "id": "ef226f66-ace9-4d4e-abb0-8363fb884fe7",
+      "name": "CPE",
+      "description": {
+        "content": "Common Platform Enumeration product dictionary",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e88c65aa-66aa-42cf-8490-1546264b1789",
+          "name": "Get CPE (Common Platform Enumeration) records",
+          "request": {
+            "name": "Get CPE (Common Platform Enumeration) records",
+            "description": {
+              "content": "Query the NVD CPE dictionary for software and hardware product identifiers. Supports filtering by CPE name, keyword, and modification date. Returns up to 10,000 results per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cpes",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cpeNameId",
+                  "value": "<uuid>",
+                  "description": "CPE UUID identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "cpeMatchString",
+                  "value": "<string>",
+                  "description": "CPE 2.3 match string (wildcards supported)"
+                },
+                {
+                  "disabled": false,
+                  "key": "keywordSearch",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "keywordExactMatch",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "matchCriteriaId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "10000"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "186307a1-fbbb-420d-aa25-c58f96adfa3b",
+              "name": "CPE records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cpes",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cpeNameId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cpeMatchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordSearch",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordExactMatch",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "matchCriteriaId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "10000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 8009,\n  \"startIndex\": 9762,\n  \"totalResults\": 6360,\n  \"format\": \"string\",\n  \"version\": \"string\",\n  \"timestamp\": \"1984-08-19T20:41:32.344Z\",\n  \"products\": [\n    {\n      \"cpe\": {\n        \"deprecated\": false,\n        \"cpeName\": \"string\",\n        \"cpeNameId\": \"103b9367-525f-d9bc-9149-4444c6d2e690\",\n        \"lastModified\": \"1983-11-10T08:21:27.933Z\",\n        \"created\": \"1992-06-18T04:16:59.589Z\",\n        \"titles\": [\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          },\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          }\n        ],\n        \"refs\": [\n          {\n            \"ref\": \"http://hCYddvW.qazZNXDMG9n-gVRPhAoQs+PZYr5foiSizrR4bdtdaERvm.1c1UgRKOXAaW0+DrjxChXY\",\n            \"type\": \"string\"\n          },\n          {\n            \"ref\": \"https://twYaNwfIbdWcdYoNzxWegIaGVZweKoB.zhUvvYnHk,4w-UccpE,q6iLZ60pdl9IwW9zAyeN7n5r\",\n            \"type\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"cpe\": {\n        \"deprecated\": false,\n        \"cpeName\": \"string\",\n        \"cpeNameId\": \"69ed16f1-7567-b50a-b50f-1e807946035c\",\n        \"lastModified\": \"1967-08-18T04:08:46.237Z\",\n        \"created\": \"1958-03-16T19:41:44.086Z\",\n        \"titles\": [\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          },\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          }\n        ],\n        \"refs\": [\n          {\n            \"ref\": \"https://wWDQFZPkSbGUkx.ezaCWedVbkuWG1zqLUl5RetmbjPi9MiMVZFNkVsoUkWpTK.CHVkiDRcMRh\",\n            \"type\": \"string\"\n          },\n          {\n            \"ref\": \"http://duSfG.hlhodSRcMwhSAm7jVYUFWxtAyT7n3\",\n            \"type\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "73d2fd9c-001d-4dfb-baf5-bd7e3f26890f",
+      "name": "CPE Match",
+      "description": {
+        "content": "CVE-to-product match criteria",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "372a7780-f544-4b4f-8a78-f368606fcd71",
+          "name": "Get CPE match criteria",
+          "request": {
+            "name": "Get CPE match criteria",
+            "description": {
+              "content": "Retrieve CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Returns up to 500 results per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cpematch",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cveId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "matchCriteriaId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "500"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7beb2419-8764-4975-87ef-b2cf6a730079",
+              "name": "CPE match criteria",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cpematch",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "matchCriteriaId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "500"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 6198,\n  \"startIndex\": 9478,\n  \"totalResults\": 1161,\n  \"timestamp\": \"1970-08-17T05:46:45.140Z\",\n  \"matchStrings\": [\n    {\n      \"matchString\": {\n        \"matchCriteriaId\": \"3f6e7ea4-9275-78fd-6884-ed74b954985a\",\n        \"criteria\": \"string\",\n        \"lastModified\": \"1991-08-30T09:39:14.550Z\",\n        \"cpeLastModified\": \"2000-11-24T19:39:38.126Z\",\n        \"created\": \"2006-08-31T00:05:43.140Z\",\n        \"status\": \"Inactive\",\n        \"matches\": [\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"f992211d-2a86-3e9a-c56b-f4caf5fa7ca0\"\n          },\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"30cf7bdd-e80f-7af3-7f48-59cc3cc30775\"\n          }\n        ]\n      }\n    },\n    {\n      \"matchString\": {\n        \"matchCriteriaId\": \"6f22ba19-4714-bd88-7eaa-fe44ec90c6ac\",\n        \"criteria\": \"string\",\n        \"lastModified\": \"1975-06-03T20:43:33.116Z\",\n        \"cpeLastModified\": \"2012-03-22T11:43:50.400Z\",\n        \"created\": \"1947-05-26T10:32:55.375Z\",\n        \"status\": \"Active\",\n        \"matches\": [\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"de86c546-95c2-5009-a047-e1f55cfa31b1\"\n          },\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"ef3d9354-f4e0-b9bc-71ec-6b7211cbfa53\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a5f3aa34-ed07-401b-9f39-222dd9f57031",
+      "name": "CVE",
+      "description": {
+        "content": "Common Vulnerabilities and Exposures records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5918a336-1ede-4fbd-854e-8d5a5e8474a0",
+          "name": "Get CVE records",
+          "request": {
+            "name": "Get CVE records",
+            "description": {
+              "content": "Retrieve one or more CVE records. Use cveId to get a single CVE, or use filters to query a range. Maximum 2000 results per page. Use startIndex for pagination. Date ranges must not span more than 120 days.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cves",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cveId",
+                  "value": "<string>",
+                  "description": "Specific CVE ID (e.g., CVE-2021-44228)"
+                },
+                {
+                  "disabled": false,
+                  "key": "keywordSearch",
+                  "value": "<string>",
+                  "description": "Free text search across CVE description"
+                },
+                {
+                  "disabled": false,
+                  "key": "keywordExactMatch",
+                  "value": "<boolean>",
+                  "description": "Require exact keyword match when true"
+                },
+                {
+                  "disabled": false,
+                  "key": "cvssV3Severity",
+                  "value": "<string>",
+                  "description": "Filter by CVSS v3.x base severity"
+                },
+                {
+                  "disabled": false,
+                  "key": "cvssV2Severity",
+                  "value": "<string>",
+                  "description": "Filter by CVSS v2.0 base severity"
+                },
+                {
+                  "disabled": false,
+                  "key": "cvssV3Metrics",
+                  "value": "<string>",
+                  "description": "Filter by CVSS v3 vector string"
+                },
+                {
+                  "disabled": false,
+                  "key": "cweId",
+                  "value": "<string>",
+                  "description": "CWE weakness ID (e.g., CWE-79)"
+                },
+                {
+                  "disabled": false,
+                  "key": "cpeName",
+                  "value": "<string>",
+                  "description": "CPE 2.3 formatted string to find CVEs affecting a specific product"
+                },
+                {
+                  "disabled": false,
+                  "key": "isVulnerable",
+                  "value": "<boolean>",
+                  "description": "When true, only return CVEs where the CPE match is vulnerable (must use cpeName)"
+                },
+                {
+                  "disabled": false,
+                  "key": "virtualMatchString",
+                  "value": "<string>",
+                  "description": "CPE match string with wildcards"
+                },
+                {
+                  "disabled": false,
+                  "key": "pubStartDate",
+                  "value": "<dateTime>",
+                  "description": "CVE publication start date (ISO 8601, max 120-day range)"
+                },
+                {
+                  "disabled": false,
+                  "key": "pubEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>",
+                  "description": "Last modification start date"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sourceIdentifier",
+                  "value": "<string>",
+                  "description": "CVE source organization identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "hasKev",
+                  "value": "<boolean>",
+                  "description": "When true, only return CVEs in CISA's Known Exploited Vulnerabilities catalog"
+                },
+                {
+                  "disabled": false,
+                  "key": "hasCertAlerts",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hasCertNotes",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hasOval",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "noRejected",
+                  "value": "<boolean>",
+                  "description": "Exclude CVEs with REJECTED status"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "2000",
+                  "description": "Number of results per page (max 2000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0",
+                  "description": "Zero-based start index for pagination"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b164896-f8f3-427a-b367-634e4da53d04",
+              "name": "CVE results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cves",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordSearch",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordExactMatch",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cvssV3Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV2Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV3Metrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cweId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cpeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isVulnerable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "virtualMatchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pubStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "pubEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "sourceIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hasKev",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertAlerts",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertNotes",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasOval",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "noRejected",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "2000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Rate limit (5 without key, 50 with key, per 30 seconds)",
+                  "key": "X-RateLimit-Limit",
+                  "value": "3739"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 9435,\n  \"startIndex\": 760,\n  \"totalResults\": 4847,\n  \"format\": \"string\",\n  \"version\": \"string\",\n  \"timestamp\": \"1970-03-02T22:36:51.924Z\",\n  \"vulnerabilities\": [\n    {\n      \"cve\": {\n        \"id\": \"CVE-7654-6785286075075\",\n        \"sourceIdentifier\": \"string\",\n        \"published\": \"1968-06-08T21:02:54.232Z\",\n        \"lastModified\": \"2011-01-13T00:14:11.606Z\",\n        \"vulnStatus\": \"Awaiting Analysis\",\n        \"descriptions\": [\n          {\n            \"lang\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"lang\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"metrics\": {\n          \"cvssMetricV31\": [\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 7192.745902221661,\n              \"impactScore\": 9991.726128850683\n            },\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 5905.996166505887,\n              \"impactScore\": 785.1997348566597\n            }\n          ],\n          \"cvssMetricV30\": [\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 1849.8938331552472,\n              \"impactScore\": 1211.3935562264433\n            },\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 3997.305128888788,\n              \"impactScore\": 1546.23385853778\n            }\n          ],\n          \"cvssMetricV2\": [\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"baseSeverity\": \"MEDIUM\"\n            },\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"baseSeverity\": \"MEDIUM\"\n            }\n          ]\n        },\n        \"weaknesses\": [\n          {\n            \"source\": \"string\",\n            \"type\": \"string\",\n            \"description\": [\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              },\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              }\n            ]\n          },\n          {\n            \"source\": \"string\",\n            \"type\": \"string\",\n            \"description\": [\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              },\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              }\n            ]\n          }\n        ],\n        \"configurations\": [\n          {\n            \"nodes\": [\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          },\n          {\n            \"nodes\": [\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        ],\n        \"references\": [\n          {\n            \"url\": \"https://tdzWsrCgTZpsUSNXyDQbGAythgqxQPh.hbazGy0pTXa..WGzG77BDvcxPoYUqNo0tHeAlRP\",\n            \"source\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"url\": \"http://NnBXTlNIoyGXs.ksJkMxSuYkLjxv6ESTPNDby6bk8D\",\n            \"source\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ],\n        \"cisaExploitAdd\": \"1971-12-12\",\n        \"cisaActionDue\": \"1988-08-12\",\n        \"cisaRequiredAction\": \"string\",\n        \"cisaVulnerabilityName\": \"string\"\n      }\n    },\n    {\n      \"cve\": {\n        \"id\": \"CVE-1919-50787\",\n        \"sourceIdentifier\": \"string\",\n        \"published\": \"1952-01-23T18:20:03.811Z\",\n        \"lastModified\": \"1995-04-30T03:15:43.338Z\",\n        \"vulnStatus\": \"Awaiting Analysis\",\n        \"descriptions\": [\n          {\n            \"lang\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"lang\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"metrics\": {\n          \"cvssMetricV31\": [\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 7336.622551796014,\n              \"impactScore\": 6441.103878420857\n            },\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 5102.317468061891,\n              \"impactScore\": 6396.448416906277\n            }\n          ],\n          \"cvssMetricV30\": [\n            {\n              \"source\": \"string\",\n              \"type\": \"Secondary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 8597.858396377336,\n              \"impactScore\": 1912.4930361162585\n            },\n            {\n              \"source\": \"string\",\n              \"type\": \"Primary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackVector\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"attackComplexity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"privilegesRequired\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"userInteraction\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"scope\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"confidentialityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"integrityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"availabilityImpact\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseSeverity\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"exploitabilityScore\": 2384.1717228372604,\n              \"impactScore\": 514.6677225303531\n            }\n          ],\n          \"cvssMetricV2\": [\n            {\n              \"source\": \"string\",\n              \"type\": \"Secondary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"baseSeverity\": \"HIGH\"\n            },\n            {\n              \"source\": \"string\",\n              \"type\": \"Secondary\",\n              \"cvssData\": {\n                \"version\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"vectorString\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"baseScore\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"baseSeverity\": \"LOW\"\n            }\n          ]\n        },\n        \"weaknesses\": [\n          {\n            \"source\": \"string\",\n            \"type\": \"string\",\n            \"description\": [\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              },\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              }\n            ]\n          },\n          {\n            \"source\": \"string\",\n            \"type\": \"string\",\n            \"description\": [\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              },\n              {\n                \"lang\": \"string\",\n                \"value\": \"string\"\n              }\n            ]\n          }\n        ],\n        \"configurations\": [\n          {\n            \"nodes\": [\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          },\n          {\n            \"nodes\": [\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"operator\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"negate\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"cpeMatch\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        ],\n        \"references\": [\n          {\n            \"url\": \"http://sGxRy.cydl4jpqfpdAfVwpdlwgh0xZJtQkR\",\n            \"source\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"url\": \"https://VGrwnjbQXblDpuAmFDVrDen.neoa.7TVu1iCrbkCzrKoLv2\",\n            \"source\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ],\n        \"cisaExploitAdd\": \"1997-06-12\",\n        \"cisaActionDue\": \"1966-01-21\",\n        \"cisaRequiredAction\": \"string\",\n        \"cisaVulnerabilityName\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0c5107d-b72e-4759-9a5d-d58513879eed",
+              "name": "Bad request — invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cves",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordSearch",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordExactMatch",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cvssV3Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV2Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV3Metrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cweId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cpeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isVulnerable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "virtualMatchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pubStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "pubEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "sourceIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hasKev",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertAlerts",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertNotes",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasOval",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "noRejected",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "2000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0b7578e-4150-497c-9a09-e128264f3400",
+              "name": "API key required or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cves",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordSearch",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordExactMatch",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cvssV3Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV2Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV3Metrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cweId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cpeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isVulnerable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "virtualMatchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pubStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "pubEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "sourceIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hasKev",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertAlerts",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertNotes",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasOval",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "noRejected",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "2000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0bbf17a4-a9fa-4b16-96e3-c582127c585a",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cves",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordSearch",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordExactMatch",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cvssV3Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV2Severity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cvssV3Metrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cweId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cpeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isVulnerable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "virtualMatchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pubStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "pubEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "sourceIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hasKev",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertAlerts",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasCertNotes",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasOval",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "noRejected",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "2000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f950e77a-af24-4f7a-a9de-6abbf8932619",
+      "name": "CVE Change History",
+      "description": {
+        "content": "CVE record modification tracking",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef008522-a25e-4e67-9fea-d050bb812aee",
+          "name": "Get CVE change history",
+          "request": {
+            "name": "Get CVE change history",
+            "description": {
+              "content": "Track modifications to CVE records over time. Useful for incremental synchronization of local databases. Date ranges must not span more than 120 days. Returns up to 5000 changes per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cvehistory",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cveId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "changeStartDate",
+                  "value": "<dateTime>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "changeEndDate",
+                  "value": "<dateTime>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "eventName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "5000"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "703dd1f8-d0d5-45e1-9725-3307c65eb85a",
+              "name": "CVE change history results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cvehistory",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "changeStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "changeEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "eventName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "5000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 5579,\n  \"startIndex\": 1597,\n  \"totalResults\": 6369,\n  \"format\": \"string\",\n  \"version\": \"string\",\n  \"timestamp\": \"1960-11-27T18:20:57.152Z\",\n  \"cveChanges\": [\n    {\n      \"change\": {\n        \"cveId\": \"string\",\n        \"eventName\": \"string\",\n        \"cveChangeId\": \"56c0c071-a48e-18d3-1bc6-0377a8771840\",\n        \"sourceIdentifier\": \"string\",\n        \"created\": \"1961-05-15T10:11:28.080Z\",\n        \"details\": [\n          {\n            \"action\": \"Added\",\n            \"type\": \"string\",\n            \"oldValue\": \"string\",\n            \"newValue\": \"string\"\n          },\n          {\n            \"action\": \"Changed\",\n            \"type\": \"string\",\n            \"oldValue\": \"string\",\n            \"newValue\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"change\": {\n        \"cveId\": \"string\",\n        \"eventName\": \"string\",\n        \"cveChangeId\": \"b75035b4-b3e3-9e04-491c-944291bbd107\",\n        \"sourceIdentifier\": \"string\",\n        \"created\": \"2016-10-23T14:48:24.207Z\",\n        \"details\": [\n          {\n            \"action\": \"Changed\",\n            \"type\": \"string\",\n            \"oldValue\": \"string\",\n            \"newValue\": \"string\"\n          },\n          {\n            \"action\": \"Removed\",\n            \"type\": \"string\",\n            \"oldValue\": \"string\",\n            \"newValue\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bfa60807-02d9-4386-86d5-4a4f27df6e61",
+      "name": "Sources",
+      "description": {
+        "content": "NVD data source organizations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "188d195f-ded4-4ce4-88ef-8b4d66620102",
+          "name": "Get NVD data sources",
+          "request": {
+            "name": "Get NVD data sources",
+            "description": {
+              "content": "Retrieve information about organizations that contribute vulnerability data to the NVD. Returns up to 1,000 source records per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "source",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sourceIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c54cdf62-b258-4f83-a724-b63a3904902c",
+              "name": "Source records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "source",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sourceIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 5141,\n  \"startIndex\": 233,\n  \"totalResults\": 12,\n  \"timestamp\": \"1977-01-21T19:16:21.498Z\",\n  \"sources\": [\n    {\n      \"sourceIdentifier\": \"string\",\n      \"name\": \"string\",\n      \"contactEmail\": \"string\",\n      \"lastModified\": \"2009-08-11T00:17:58.748Z\",\n      \"created\": \"2011-01-15T10:44:23.124Z\"\n    },\n    {\n      \"sourceIdentifier\": \"string\",\n      \"name\": \"string\",\n      \"contactEmail\": \"string\",\n      \"lastModified\": \"1959-12-29T08:15:37.249Z\",\n      \"created\": \"2017-12-18T18:56:15.684Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services.nvd.nist.gov/rest/json",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "222e4bd9-cfa5-4adf-9d60-a2a58b0759e7",
+    "name": "NVD CVE API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.\n\nContact Support:\n Name: NVD Support",
+      "type": "text/plain"
+    }
+  }
+}

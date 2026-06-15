@@ -1,0 +1,374 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NVD CVE API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CVE",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CVE records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+            "params": [
+              {
+                "name": "cveId",
+                "value": "",
+                "type": "query",
+                "description": "Specific CVE ID (e.g., CVE-2021-44228)"
+              },
+              {
+                "name": "keywordSearch",
+                "value": "",
+                "type": "query",
+                "description": "Free text search across CVE description"
+              },
+              {
+                "name": "keywordExactMatch",
+                "value": "",
+                "type": "query",
+                "description": "Require exact keyword match when true"
+              },
+              {
+                "name": "cvssV3Severity",
+                "value": "",
+                "type": "query",
+                "description": "Filter by CVSS v3.x base severity"
+              },
+              {
+                "name": "cvssV2Severity",
+                "value": "",
+                "type": "query",
+                "description": "Filter by CVSS v2.0 base severity"
+              },
+              {
+                "name": "cvssV3Metrics",
+                "value": "",
+                "type": "query",
+                "description": "Filter by CVSS v3 vector string"
+              },
+              {
+                "name": "cweId",
+                "value": "",
+                "type": "query",
+                "description": "CWE weakness ID (e.g., CWE-79)"
+              },
+              {
+                "name": "cpeName",
+                "value": "",
+                "type": "query",
+                "description": "CPE 2.3 formatted string to find CVEs affecting a specific product"
+              },
+              {
+                "name": "isVulnerable",
+                "value": "",
+                "type": "query",
+                "description": "When true, only return CVEs where the CPE match is vulnerable (must use cpeName)"
+              },
+              {
+                "name": "virtualMatchString",
+                "value": "",
+                "type": "query",
+                "description": "CPE match string with wildcards"
+              },
+              {
+                "name": "pubStartDate",
+                "value": "",
+                "type": "query",
+                "description": "CVE publication start date (ISO 8601, max 120-day range)"
+              },
+              {
+                "name": "pubEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query",
+                "description": "Last modification start date"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceIdentifier",
+                "value": "",
+                "type": "query",
+                "description": "CVE source organization identifier"
+              },
+              {
+                "name": "hasKev",
+                "value": "",
+                "type": "query",
+                "description": "When true, only return CVEs in CISA's Known Exploited Vulnerabilities catalog"
+              },
+              {
+                "name": "hasCertAlerts",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hasCertNotes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hasOval",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "noRejected",
+                "value": "",
+                "type": "query",
+                "description": "Exclude CVEs with REJECTED status"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page (max 2000)"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based start index for pagination"
+              }
+            ]
+          },
+          "docs": "Retrieve one or more CVE records. Use cveId to get a single CVE, or use filters to query a range. Maximum 2000 results per page. Use startIndex for pagination. Date ranges must not span more than 120 days."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CVE Change History",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CVE change history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/cvehistory/2.0",
+            "params": [
+              {
+                "name": "cveId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "eventName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Track modifications to CVE records over time. Useful for incremental synchronization of local databases. Date ranges must not span more than 120 days. Returns up to 5000 changes per page."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CPE",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CPE (Common Platform Enumeration) records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/cpes/2.0",
+            "params": [
+              {
+                "name": "cpeNameId",
+                "value": "",
+                "type": "query",
+                "description": "CPE UUID identifier"
+              },
+              {
+                "name": "cpeMatchString",
+                "value": "",
+                "type": "query",
+                "description": "CPE 2.3 match string (wildcards supported)"
+              },
+              {
+                "name": "keywordSearch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "keywordExactMatch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchCriteriaId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query the NVD CPE dictionary for software and hardware product identifiers. Supports filtering by CPE name, keyword, and modification date. Returns up to 10,000 results per page."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CPE Match",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CPE match criteria",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/cpematch/2.0",
+            "params": [
+              {
+                "name": "cveId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchCriteriaId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Returns up to 500 results per page."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get NVD data sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/source/2.0",
+            "params": [
+              {
+                "name": "sourceIdentifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve information about organizations that contribute vulnerability data to the NVD. Returns up to 1,000 source records per page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
