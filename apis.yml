@@ -146,6 +146,10 @@ apis:
       - type: Documentation
         url: https://nvd.nist.gov/developers
 common:
+  - type: DomainSecurity
+    url: security/nvd-domain-security.yml
+  - type: Authentication
+    url: authentication/nvd-authentication.yml
   - type: Portal
     url: https://nvd.nist.gov/developers
   - type: Website

@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/nvd-cve-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: APIKey
+  type: apiKey
+  in: header
+  parameter: apiKey
+  description: 'NVD API key (optional but recommended). Without a key: 5 requests/30s. With
+    a key: 50 requests/30s. Request at https://nvd.nist.gov/developers/request-an-api-key'
+  sources:
+  - openapi/nvd-cve-openapi.yml
