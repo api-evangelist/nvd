@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: NVD CVE CPE CPE Match API
+  description: 'The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.'
+  version: 2.0.0
+  contact:
+    name: NVD Support
+    url: https://nvd.nist.gov/general/contact
+  license:
+    name: Public Domain (US Government)
+    url: https://nvd.nist.gov/developers/terms-of-use
+servers:
+- url: https://services.nvd.nist.gov/rest/json
+  description: NVD REST API v2
+security:
+- {}
+- APIKey: []
+tags:
+- name: CPE Match
+  description: CVE-to-product match criteria
+paths:
+  /cpematch/2.0:
+    get:
+      operationId: getCPEMatch
+      summary: Get CPE match criteria
+      description: Retrieve CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Returns up to 500 results per page.
+      tags:
+      - CPE Match
+      parameters:
+      - name: cveId
+        in: query
+        schema:
+          type: string
+      - name: matchCriteriaId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: lastModStartDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: lastModEndDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: resultsPerPage
+        in: query
+        schema:
+          type: integer
+          default: 500
+          maximum: 500
+      - name: startIndex
+        in: query
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: CPE match criteria
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPEMatchResponse'
+components:
+  schemas:
+    CPEMatchResponse:
+      type: object
+      properties:
+        resultsPerPage:
+          type: integer
+        startIndex:
+          type: integer
+        totalResults:
+          type: integer
+        timestamp:
+          type: string
+          format: date-time
+        matchStrings:
+          type: array
+          items:
+            type: object
+            properties:
+              matchString:
+                type: object
+                properties:
+                  matchCriteriaId:
+                    type: string
+                    format: uuid
+                  criteria:
+                    type: string
+                  lastModified:
+                    type: string
+                    format: date-time
+                  cpeLastModified:
+                    type: string
+                    format: date-time
+                  created:
+                    type: string
+                    format: date-time
+                  status:
+                    type: string
+                    enum:
+                    - Active
+                    - Inactive
+                  matches:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        cpeName:
+                          type: string
+                        cpeNameId:
+                          type: string
+                          format: uuid
+  securitySchemes:
+    APIKey:
+      type: apiKey
+      in: header
+      name: apiKey
+      description: 'NVD API key (optional but recommended). Without a key: 5 requests/30s. With a key: 50 requests/30s. Request at https://nvd.nist.gov/developers/request-an-api-key'
+externalDocs:
+  description: NVD Developer Documentation
+  url: https://nvd.nist.gov/developers/vulnerabilities

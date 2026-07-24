@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: NVD CVE CPE Sources API
+  description: 'The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.'
+  version: 2.0.0
+  contact:
+    name: NVD Support
+    url: https://nvd.nist.gov/general/contact
+  license:
+    name: Public Domain (US Government)
+    url: https://nvd.nist.gov/developers/terms-of-use
+servers:
+- url: https://services.nvd.nist.gov/rest/json
+  description: NVD REST API v2
+security:
+- {}
+- APIKey: []
+tags:
+- name: Sources
+  description: NVD data source organizations
+paths:
+  /source/2.0:
+    get:
+      operationId: getSources
+      summary: Get NVD data sources
+      description: Retrieve information about organizations that contribute vulnerability data to the NVD. Returns up to 1,000 source records per page.
+      tags:
+      - Sources
+      parameters:
+      - name: sourceIdentifier
+        in: query
+        schema:
+          type: string
+      - name: lastModStartDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: lastModEndDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: resultsPerPage
+        in: query
+        schema:
+          type: integer
+          default: 1000
+          maximum: 1000
+      - name: startIndex
+        in: query
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: Source records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceResponse'
+components:
+  schemas:
+    SourceResponse:
+      type: object
+      properties:
+        resultsPerPage:
+          type: integer
+        startIndex:
+          type: integer
+        totalResults:
+          type: integer
+        timestamp:
+          type: string
+          format: date-time
+        sources:
+          type: array
+          items:
+            type: object
+            properties:
+              sourceIdentifier:
+                type: string
+              name:
+                type: string
+              contactEmail:
+                type: string
+              lastModified:
+                type: string
+                format: date-time
+              created:
+                type: string
+                format: date-time
+  securitySchemes:
+    APIKey:
+      type: apiKey
+      in: header
+      name: apiKey
+      description: 'NVD API key (optional but recommended). Without a key: 5 requests/30s. With a key: 50 requests/30s. Request at https://nvd.nist.gov/developers/request-an-api-key'
+externalDocs:
+  description: NVD Developer Documentation
+  url: https://nvd.nist.gov/developers/vulnerabilities
