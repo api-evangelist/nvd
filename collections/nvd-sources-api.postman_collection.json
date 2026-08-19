@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "f20c44ed-20c5-44f2-a0c5-58cc35e5ce6b",
+      "name": "Sources",
+      "description": {
+        "content": "NVD data source organizations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86f2a129-8374-4ce0-863a-4576f5bf3508",
+          "name": "Get NVD data sources",
+          "request": {
+            "name": "Get NVD data sources",
+            "description": {
+              "content": "Retrieve information about organizations that contribute vulnerability data to the NVD. Returns up to 1,000 source records per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "source",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sourceIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1765a2cc-d877-48c3-9eb3-681f0800bed1",
+              "name": "Source records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "source",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sourceIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 8010,\n  \"startIndex\": 3499,\n  \"totalResults\": 4575,\n  \"timestamp\": \"1985-10-01T13:29:35.788Z\",\n  \"sources\": [\n    {\n      \"sourceIdentifier\": \"string\",\n      \"name\": \"string\",\n      \"contactEmail\": \"string\",\n      \"lastModified\": \"2004-02-22T16:23:23.692Z\",\n      \"created\": \"2014-07-27T05:15:11.582Z\"\n    },\n    {\n      \"sourceIdentifier\": \"string\",\n      \"name\": \"string\",\n      \"contactEmail\": \"string\",\n      \"lastModified\": \"1999-06-19T06:34:31.205Z\",\n      \"created\": \"1970-01-12T04:49:10.287Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services.nvd.nist.gov/rest/json",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "9a73a9d4-41a3-455e-b079-eeac85836680",
+    "name": "NVD CVE CPE Sources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.\n\nContact Support:\n Name: NVD Support",
+      "type": "text/plain"
+    }
+  }
+}

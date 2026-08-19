@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NVD CVE CPE CPE Match API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CPE Match",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CPE match criteria",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/cpematch/2.0",
+            "params": [
+              {
+                "name": "cveId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchCriteriaId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Returns up to 500 results per page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

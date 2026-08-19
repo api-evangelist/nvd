@@ -1,0 +1,163 @@
+{
+  "item": [
+    {
+      "id": "99eb1394-3626-4673-a903-2a531f93df67",
+      "name": "CPE Match",
+      "description": {
+        "content": "CVE-to-product match criteria",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95579965-bd08-4b08-8d3c-73dca8b44073",
+          "name": "Get CPE match criteria",
+          "request": {
+            "name": "Get CPE match criteria",
+            "description": {
+              "content": "Retrieve CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Returns up to 500 results per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cpematch",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cveId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "matchCriteriaId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "500"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc509e4d-dfc7-4ab7-9aa0-367f3b52f4ea",
+              "name": "CPE match criteria",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cpematch",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cveId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "matchCriteriaId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "500"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 6336,\n  \"startIndex\": 1924,\n  \"totalResults\": 5328,\n  \"timestamp\": \"1968-05-18T18:29:11.169Z\",\n  \"matchStrings\": [\n    {\n      \"matchString\": {\n        \"matchCriteriaId\": \"529b9117-fd95-97fe-bdfc-7ff2f9f3401f\",\n        \"criteria\": \"string\",\n        \"lastModified\": \"1984-01-02T10:47:52.969Z\",\n        \"cpeLastModified\": \"1993-06-18T12:09:48.382Z\",\n        \"created\": \"1951-08-26T07:19:52.936Z\",\n        \"status\": \"Active\",\n        \"matches\": [\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"0f46a533-deca-4011-e0aa-cd419703ce09\"\n          },\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"83aa0e1e-e011-4e77-bb1b-1b80f08f03b7\"\n          }\n        ]\n      }\n    },\n    {\n      \"matchString\": {\n        \"matchCriteriaId\": \"2a071e9a-4de1-b091-7b5e-5e0cac91ef36\",\n        \"criteria\": \"string\",\n        \"lastModified\": \"1952-06-19T19:54:47.933Z\",\n        \"cpeLastModified\": \"1995-09-15T11:03:29.562Z\",\n        \"created\": \"1976-12-24T05:08:07.820Z\",\n        \"status\": \"Active\",\n        \"matches\": [\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"c1780325-d2e6-89a1-bf6f-d5bfcd20b696\"\n          },\n          {\n            \"cpeName\": \"string\",\n            \"cpeNameId\": \"19c4ac07-770d-c4af-b546-a16d42029e0b\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services.nvd.nist.gov/rest/json",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "1363b77c-c9d5-4ffb-bf2a-b1deb6f672bb",
+    "name": "NVD CVE CPE CPE Match API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.\n\nContact Support:\n Name: NVD Support",
+      "type": "text/plain"
+    }
+  }
+}

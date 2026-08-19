@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NVD CVE CPE Sources API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get NVD data sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/source/2.0",
+            "params": [
+              {
+                "name": "sourceIdentifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve information about organizations that contribute vulnerability data to the NVD. Returns up to 1,000 source records per page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

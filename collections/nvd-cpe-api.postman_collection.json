@@ -1,0 +1,192 @@
+{
+  "item": [
+    {
+      "id": "7364f306-fcb2-4fcf-9698-180c1982ed0b",
+      "name": "CPE",
+      "description": {
+        "content": "Common Platform Enumeration product dictionary",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6774e5d6-dc29-4e64-82d7-123a824ccc8f",
+          "name": "Get CPE (Common Platform Enumeration) records",
+          "request": {
+            "name": "Get CPE (Common Platform Enumeration) records",
+            "description": {
+              "content": "Query the NVD CPE dictionary for software and hardware product identifiers. Supports filtering by CPE name, keyword, and modification date. Returns up to 10,000 results per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cpes",
+                "2.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cpeNameId",
+                  "value": "<uuid>",
+                  "description": "CPE UUID identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "cpeMatchString",
+                  "value": "<string>",
+                  "description": "CPE 2.3 match string (wildcards supported)"
+                },
+                {
+                  "disabled": false,
+                  "key": "keywordSearch",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "keywordExactMatch",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModStartDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastModEndDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "matchCriteriaId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultsPerPage",
+                  "value": "10000"
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64e18b5d-ae90-4809-a8bc-e727c65db22b",
+              "name": "CPE records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cpes",
+                    "2.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cpeNameId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cpeMatchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordSearch",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keywordExactMatch",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastModStartDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "lastModEndDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "matchCriteriaId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "resultsPerPage",
+                      "value": "10000"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultsPerPage\": 7836,\n  \"startIndex\": 2185,\n  \"totalResults\": 9631,\n  \"format\": \"string\",\n  \"version\": \"string\",\n  \"timestamp\": \"1967-02-14T14:53:38.724Z\",\n  \"products\": [\n    {\n      \"cpe\": {\n        \"deprecated\": true,\n        \"cpeName\": \"string\",\n        \"cpeNameId\": \"3782cbf8-f096-c49e-c070-7a41ef9f1f50\",\n        \"lastModified\": \"2017-12-19T15:40:14.446Z\",\n        \"created\": \"1979-02-01T00:25:11.954Z\",\n        \"titles\": [\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          },\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          }\n        ],\n        \"refs\": [\n          {\n            \"ref\": \"http://VOhWNSmhzrKnDEgDdMdLPPTpXUiAzA.qiqfqWooz.scrbAfRmtqMfjAPxbXB4\",\n            \"type\": \"string\"\n          },\n          {\n            \"ref\": \"http://ph.dxg99JVsvqOdnFqeuU4L2dU+W+L-jVnyo+ZKX76vPLKIydt.jXu-8ctZcRf,Uf\",\n            \"type\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"cpe\": {\n        \"deprecated\": false,\n        \"cpeName\": \"string\",\n        \"cpeNameId\": \"26d6ef30-18d2-8ba3-a9d7-bb6ecdd1f2c2\",\n        \"lastModified\": \"2024-05-22T04:13:28.959Z\",\n        \"created\": \"1979-11-07T09:08:29.252Z\",\n        \"titles\": [\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          },\n          {\n            \"title\": \"string\",\n            \"lang\": \"string\"\n          }\n        ],\n        \"refs\": [\n          {\n            \"ref\": \"http://TPfQ.ysXPQSoy3.y05z3LBK\",\n            \"type\": \"string\"\n          },\n          {\n            \"ref\": \"https://qyJkLRudlNcCqsSEapVBcpOIicm.pjcvlad4mTvMYTxuWVFCfrQRwKnEy\",\n            \"type\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services.nvd.nist.gov/rest/json",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "6d0a50fa-abae-4837-882e-5538e9fe7b22",
+    "name": "NVD CVE CPE API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.\n\nContact Support:\n Name: NVD Support",
+      "type": "text/plain"
+    }
+  }
+}

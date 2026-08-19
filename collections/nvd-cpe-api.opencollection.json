@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NVD CVE CPE API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CPE",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CPE (Common Platform Enumeration) records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services.nvd.nist.gov/rest/json/cpes/2.0",
+            "params": [
+              {
+                "name": "cpeNameId",
+                "value": "",
+                "type": "query",
+                "description": "CPE UUID identifier"
+              },
+              {
+                "name": "cpeMatchString",
+                "value": "",
+                "type": "query",
+                "description": "CPE 2.3 match string (wildcards supported)"
+              },
+              {
+                "name": "keywordSearch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "keywordExactMatch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModStartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastModEndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchCriteriaId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resultsPerPage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query the NVD CPE dictionary for software and hardware product identifiers. Supports filtering by CPE name, keyword, and modification date. Returns up to 10,000 results per page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
