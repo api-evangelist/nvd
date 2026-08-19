@@ -28,7 +28,7 @@ tags:
   - CVSS
 url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: nvd:nvd-overview
   name: National Vulnerability Database API
