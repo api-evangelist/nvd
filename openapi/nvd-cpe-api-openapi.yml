@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: NVD CVE CPE API
   description: 'The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.'
@@ -81,6 +81,29 @@ paths:
                 $ref: '#/components/schemas/CPEResponse'
 components:
   schemas:
+    CPEResponse:
+      type: object
+      properties:
+        resultsPerPage:
+          type: integer
+        startIndex:
+          type: integer
+        totalResults:
+          type: integer
+        format:
+          type: string
+        version:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              cpe:
+                $ref: '#/components/schemas/CPE'
     CPE:
       type: object
       properties:
@@ -117,29 +140,6 @@ components:
                 format: uri
               type:
                 type: string
-    CPEResponse:
-      type: object
-      properties:
-        resultsPerPage:
-          type: integer
-        startIndex:
-          type: integer
-        totalResults:
-          type: integer
-        format:
-          type: string
-        version:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        products:
-          type: array
-          items:
-            type: object
-            properties:
-              cpe:
-                $ref: '#/components/schemas/CPE'
   securitySchemes:
     APIKey:
       type: apiKey
