@@ -37,8 +37,16 @@ tags:
   - Security
   - CVE
   - CPE
+  - Vulnerabilities
+  - CVSS
+  - Vulnerability Management
+tags_raw:
+  - Security
+  - CVE
+  - CPE
   - Vulnerability
   - CVSS
+  - Vulnerability Management
 url: https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml
 modified: '2026-05-19'
 specificationVersion: '0.23'
@@ -51,6 +59,12 @@ apis:
     lists, and reference links for security monitoring and dependency alerting.
   humanURL: https://nvd.nist.gov/developers
   tags:
+  - Security
+  - CVE
+  - Vulnerabilities
+  - RSS
+  - XML
+  tags_raw:
   - Security
   - CVE
   - Vulnerability
