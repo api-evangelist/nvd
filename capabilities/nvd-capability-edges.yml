@@ -1,0 +1,36 @@
+slug: nvd
+provider: NVD
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: CVE
+  spec_file: nvd-cve-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.85
+  evidence: GET /cves/2.0 getCVEs 'Get CVE records' — 'CVE (Common Vulnerabilities and Exposures) records
+    including CVSS severity scores, affected product lists, CWE classifications'
+  reason: The operation serves vulnerability records with CVSS severity and affected products, the canonical
+    feed for vulnerability scanning/remediation programmes, i.e. Vulnerability Management under Cybersecurity.
+    It is not threat detection/SOC response and not an industry-specific capability.
+- tag: CVE Change History
+  spec_file: nvd-cve-change-history-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.7
+  evidence: GET /cvehistory/2.0 getCVEChangeHistory 'Get CVE change history'
+  reason: Tracks changes to published vulnerability records, still squarely vulnerability intelligence
+    consumed by vulnerability management processes. Slightly lower confidence because the surface is purely
+    a change log of the same dataset.

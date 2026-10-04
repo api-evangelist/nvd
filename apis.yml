@@ -209,6 +209,9 @@ apis:
   - type: Documentation
     url: https://nvd.nist.gov/developers/data-sources
 common:
+  - type: CapabilityMap
+    url: capabilities/nvd-capability-edges.yml
+    name: NVD Business Capability Map
   - type: AgenticAccess
     url: agentic-access/nvd-agentic-access.yml
   - type: DomainSecurity
