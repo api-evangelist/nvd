@@ -209,6 +209,10 @@ apis:
   - type: Documentation
     url: https://nvd.nist.gov/developers/data-sources
 common:
+  - type: Plans
+    url: plans/nvd-plans-pricing.yml
+  - type: FinOps
+    url: finops/nvd-finops.yml
   - type: CapabilityMap
     url: capabilities/nvd-capability-edges.yml
     name: NVD Business Capability Map
