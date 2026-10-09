@@ -131,10 +131,8 @@ apis:
 unitEconomics:
   - name: Requests per CVE refresh
     metric: api_requests / cve_records_fetched
-    target: minimize via lastModStartDate delta sync
   - name: Cache hit ratio
     metric: cache_hits / (cache_hits + api_requests)
-    target: '> 0.9 for steady-state CVE/CPE lookups'
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
