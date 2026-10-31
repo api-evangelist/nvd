@@ -1,4 +1,4 @@
-# NVD (nvd)
+# NVD
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,172 +66,164 @@
 
 The National Vulnerability Database (NVD) provides REST APIs for CVE (Common Vulnerabilities and Exposures) data, CPE (Common Platform Enumeration) records, match criteria, and source organizations. APIs deliver vulnerability descriptions, CVSS severity scores, affected product lists, CWE classifications, and reference links for security monitoring and dependency alerting.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/apis.yml)
+**Areas:** Security · CVE · CPE · Vulnerabilities · CVSS · Vulnerability Management
 
-## Scope
+## NVD on APIs.io
 
-- **Type:** Index
+Everything profiled for NVD is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/nvd/](https://apis.io/providers/nvd/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Security
-- CVE
-- CPE
-- Vulnerability
-- CVSS
+- [National Vulnerability Database API](https://apis.io/apis/nvd/nvd-overview/) — The National Vulnerability Database (NVD) provides REST and RSS/Atom APIs for CVE (Common Vulnerabilities and Exposures) data. APIs deliver vulnerability…
+- [NVD CPE API](https://apis.io/apis/nvd/nvd-cpe-api/) — Common Platform Enumeration product dictionary
+- [NVD CPE Match API](https://apis.io/apis/nvd/nvd-cpe-match-api/) — CVE-to-product match criteria
+- [NVD CVE API](https://apis.io/apis/nvd/nvd-cve-api/) — Common Vulnerabilities and Exposures records
+- [NVD CVE Change History API](https://apis.io/apis/nvd/nvd-cve-change-history-api/) — CVE record modification tracking
+- [NVD Sources API](https://apis.io/apis/nvd/nvd-sources-api/) — NVD data source organizations
 
-## Timestamps
+### Published properties
 
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### NVD CVE API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The NVD CVE API provides programmatic access to CVE (Common Vulnerabilities and Exposures) records including CVSS severity scores, affected product lists, CWE classifications, and reference links. Supports filtering by CVE ID, CVSS metrics, CWE, keyword, modification date, and publication date. Without an API key: 5 requests per 30 seconds; with key: 50 requests per 30 seconds.
+- [Nvd Agentic Access](https://apis.io/agentic-access/nvd/nvd-agentic-access/)
 
-- **Human URL:** [https://nvd.nist.gov/developers/vulnerabilities](https://nvd.nist.gov/developers/vulnerabilities)
+#### JSON Schema (11)
 
-#### Tags
+The data models the API reads and writes.
 
-- Security
-- CVE
-- Vulnerability
-- CVSS
+- [CPE](https://apis.io/schemas/nvd/nvd-cpe/)
+- [CPEMatchResponse](https://apis.io/schemas/nvd/nvd-cpematchresponse/)
+- [CPEResponse](https://apis.io/schemas/nvd/nvd-cperesponse/)
+- [NVD CVE Record](https://apis.io/schemas/nvd/nvd-cve/)
+- [CVEConfiguration](https://apis.io/schemas/nvd/nvd-cveconfiguration/)
+- [CVEHistoryResponse](https://apis.io/schemas/nvd/nvd-cvehistoryresponse/)
+- [CVEResponse](https://apis.io/schemas/nvd/nvd-cveresponse/)
+- [CVSSMetricV2](https://apis.io/schemas/nvd/nvd-cvssmetricv2/)
+- [CVSSMetricV3](https://apis.io/schemas/nvd/nvd-cvssmetricv3/)
+- [ErrorResponse](https://apis.io/schemas/nvd/nvd-errorresponse/)
+- [SourceResponse](https://apis.io/schemas/nvd/nvd-sourceresponse/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://nvd.nist.gov/developers/vulnerabilities)
-- [Getting Started](https://nvd.nist.gov/developers/start-here)
-- [Authentication](https://nvd.nist.gov/developers/request-an-api-key)
-- [Rate Limits](https://nvd.nist.gov/developers/start-here)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-schema/nvd-cve-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-ld/nvd-context.jsonld)
-- [Postman Collection](collections/nvd-cve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/nvd-cve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### NVD CVE Change History API
+- [Nvd Structure](https://apis.io/json-structure/nvd/nvd-structure/)
 
-The NVD CVE Change History API tracks modifications to CVE records over time, enabling consumers to identify updated vulnerability data and synchronize their local databases with incremental changes rather than full reloads.
+#### JSON-LD (1)
 
-- **Human URL:** [https://nvd.nist.gov/developers/vulnerabilities](https://nvd.nist.gov/developers/vulnerabilities)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Nvd Context](https://apis.io/jsonld/nvd/nvd-context/)
 
-- Security
-- CVE
-- Vulnerability
-- Change History
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://nvd.nist.gov/developers/vulnerabilities)
-- [Getting Started](https://nvd.nist.gov/developers/start-here)
-- [Authentication](https://nvd.nist.gov/developers/request-an-api-key)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/nvd-cve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/nvd-cve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [NVD Domain Vocabulary](https://apis.io/vocabularies/nvd/nvd-vocabulary/)
 
-### NVD CPE API
+#### Collections (6)
 
-The NVD CPE (Common Platform Enumeration) API provides access to the authoritative CPE dictionary, enabling lookup of software and hardware product identifiers. Supports filtering by CPE name, match string, keyword, and modification date. Returns up to 10,000 results per page.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://nvd.nist.gov/developers/products](https://nvd.nist.gov/developers/products)
+- [NVD CVE CPE API](https://apis.io/collections/nvd/open-nvd-cpe-api/)
+- [NVD CVE CPE CPE Match API](https://apis.io/collections/nvd/open-nvd-cpe-match-api/)
+- [NVD CVE API](https://apis.io/collections/nvd/open-nvd-cve/)
+- [NVD CPE CVE API](https://apis.io/collections/nvd/open-nvd-cve-api/)
+- [NVD CVE CPE CVE Change History API](https://apis.io/collections/nvd/open-nvd-cve-change-history-api/)
+- [NVD CVE CPE Sources API](https://apis.io/collections/nvd/open-nvd-sources-api/)
 
-#### Tags
+#### Governance rules (1)
 
-- Security
-- CPE
-- Vulnerability
-- Product Enumeration
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [NVD — jsonschema rules](https://apis.io/rules/nvd/nvd-jsonschema-spectral-rules/)
 
-- [Documentation](https://nvd.nist.gov/developers/products)
-- [Getting Started](https://nvd.nist.gov/developers/start-here)
-- [Authentication](https://nvd.nist.gov/developers/request-an-api-key)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/nvd-cve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/nvd-cve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (2)
 
-### NVD CPE Match Criteria API
+Authentication, trust centre, and vulnerability disclosure.
 
-The NVD CPE Match Criteria API retrieves CPE match strings associated with CVE records, enabling detailed product-to-vulnerability mapping. Supports filtering by CVE ID, match criteria ID, and match string patterns. Returns up to 500 results per page.
+- [Nvd Authentication](https://apis.io/security/nvd/nvd-authentication/)
+- [Nvd Domain Security](https://apis.io/security/nvd/nvd-domain-security/)
 
-- **Human URL:** [https://nvd.nist.gov/developers/products](https://nvd.nist.gov/developers/products)
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Security
-- CPE
-- Vulnerability
-- Match Criteria
+- [Nvd Plans Pricing](https://apis.io/plans/nvd/nvd-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://nvd.nist.gov/developers/products)
-- [Getting Started](https://nvd.nist.gov/developers/start-here)
-- [Authentication](https://nvd.nist.gov/developers/request-an-api-key)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/nvd-cve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/nvd-cve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### NVD Source API
+- [Nvd Rate Limits](https://apis.io/rate-limits/nvd/nvd-rate-limits/)
 
-The NVD Source API provides information about the organizations that contribute vulnerability data to the NVD dataset, enabling consumers to understand data provenance. Returns up to 1,000 source records per page. Data changes infrequently; once daily updates recommended.
+#### FinOps (1)
 
-- **Human URL:** [https://nvd.nist.gov/developers/data-sources](https://nvd.nist.gov/developers/data-sources)
+What the API costs to run, by operation.
 
-#### Tags
+- [Nvd Finops](https://apis.io/finops/nvd/nvd-finops/)
 
-- Security
-- CVE
-- Data Sources
-- Organizations
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://nvd.nist.gov/developers/data-sources)
-- [Getting Started](https://nvd.nist.gov/developers/start-here)
-- [Authentication](https://nvd.nist.gov/developers/request-an-api-key)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/nvd-cve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/nvd-cve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### National Vulnerability Database API
-
-The National Vulnerability Database (NVD) provides REST and RSS/Atom APIs for CVE (Common Vulnerabilities and Exposures) data. APIs deliver vulnerability descriptions, CVSS severity scores, affected product lists, and reference links for security monitoring and dependency alerting.
-
-- **Human URL:** [https://nvd.nist.gov/developers](https://nvd.nist.gov/developers)
-
-#### Tags
-
-- Security
-- CVE
-- Vulnerability
-- RSS
-- XML
-
-#### Properties
-
-- [Documentation](https://nvd.nist.gov/developers)
-- [Postman Collection](collections/nvd-cve.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/nvd-cve.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Portal](https://nvd.nist.gov/developers)
 - [Website](https://nvd.nist.gov/)
-- [Getting Started](https://nvd.nist.gov/developers/start-here)
-- [Authentication](https://nvd.nist.gov/developers/request-an-api-key)
-- [Rate Limits](https://nvd.nist.gov/developers/start-here)
-- [Terms of Service](https://nvd.nist.gov/developers/terms-of-use)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/openapi/nvd-cve-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-schema/nvd-cve-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](https://raw.githubusercontent.com/api-evangelist/nvd/refs/heads/main/json-ld/nvd-context.jsonld)
+- [Getting started](https://nvd.nist.gov/developers/start-here)
+- [Terms of service](https://nvd.nist.gov/developers/terms-of-use)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 61.0 |
+| Contract governance | 9.8 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 15.8 |
+
+**Agent readiness 32.5** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/nvd/](https://apis.io/providers/nvd/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for NVD: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/nvd/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
